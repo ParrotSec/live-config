@@ -1,0 +1,31 @@
+#!/usr/bin/make -f
+
+%:
+	dh ${@} --parallel --with systemd
+
+override_dh_auto_install:
+	dh_auto_install -- DESTDIR=debian/tmp
+
+	# live-config-sysvinit
+	mkdir -p debian/live-config-sysvinit/lib/live/config
+	mv debian/tmp/lib/live/config/*-sysvinit debian/live-config-sysvinit/lib/live/config
+	mv debian/tmp/lib/live/config/*-sysv-rc debian/live-config-sysvinit/lib/live/config
+
+	# Using user-setup instead of live-debconfig
+	rm -f debian/tmp/live/config/*live-debconfig*
+
+	# Removing unused files
+	rm -f debian/tmp/usr/share/doc/live-config/COPYING
+	frontend/live-config-update debian/tmp
+
+override_dh_builddeb:
+	dh_builddeb -- -Zxz
+
+override_dh_compress:
+	dh_compress -Xusr/share/doc/live-config/examples
+
+override_dh_install:
+	dh_install --fail-missing
+
+override_dh_installinit:
+	dh_installinit -p live-config-sysvinit --no-restart-on-upgrade --no-start --update-rcd-params='start 00 S .' --name live-config --onlyscripts
