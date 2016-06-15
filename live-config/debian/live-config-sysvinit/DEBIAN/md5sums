@@ -1,5 +1,0 @@
-b4e734f781cfb8143586d57a1ade0e66  lib/live/config/0160-sysvinit
-5af2047481e78d85b97a4f7650722457  lib/live/config/0180-sysv-rc
-01a4df467588a84aff7dc46da923a4a7  usr/share/doc/live-config-sysvinit/changelog.gz
-3d0fd70880de9f00bbb19097d2351278  usr/share/doc/live-config-sysvinit/copyright
-4fb5fecfe717c4efd52a337e8771ce80  usr/share/lintian/overrides/live-config-sysvinit
