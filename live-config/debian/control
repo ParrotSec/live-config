@@ -1,6 +1,6 @@
 Source: live-config
-Maintainer: Lorenzo "Palinuro" Faletra <palinuro@frozenbox.org>
-Uploaders: Lorenzo "Palinuro" Faletra <palinuro@frozenbox.org>
+Maintainer: Live Systems Maintainers <debian-live@lists.debian.org>
+Uploaders: Iain R. Learmonth <irl@debian.org>
 Section: misc
 Priority: optional
 Build-Depends: debhelper (>= 9),
@@ -13,7 +13,7 @@ Homepage: https://debian-live.alioth.debian.org/live-config/
 
 Package: live-config
 Architecture: all
-Depends: live-config-sysvinit | live-config-backend,
+Depends: live-config-systemd | live-config-backend,
          ${misc:Depends}
 Recommends: iproute2 | iproute,
             keyboard-configuration,
@@ -32,7 +32,7 @@ Description: Live System Configuration Components
  process (late userspace).
  .
  In addition to live-config, a backend for an init system is required, such as
- live-config-sysvinit.
+ live-config-systemd.
 
 Package: live-config-doc
 Architecture: all

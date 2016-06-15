@@ -1,14 +1,50 @@
-live-config (5.20160601+parrot1) testing; urgency=medium
+live-config (5.20160608+0parrot0) testing; urgency=medium
 
-  * Fix live-config-update support for parrot
+  * Add Parrot exception
+  * Import into Parrot
 
- -- Lorenzo "Palinuro" Faletra <eclipse@parrotsec.org>  Wed, 01 Jun 2016 12:47:34 +0200
+ -- Lorenzo "Palinuro" Faletra <eclipse@parrotsec.org>  Wed, 15 Jun 2016 16:36:48 +0200
 
-live-config (5.20160601+parrot0) testing; urgency=medium
+live-config (5.20160608) unstable; urgency=medium
 
-  * Update for Parrot Security
+  * Team upload.
+  * Replace components/0170-systemd with a systemd generator so that
+    we don't reload systemd in the middle of the boot sequence. This
+    really fixes the boot delay experienced with systemd 230.
+  * Improve ordering of live-config.service so that it runs after the
+    local filesystems have been mounted.
+  * Rely on dh_systemd_enable to enable the service instead of shipping
+    a basic.target.wants/live-config.service symlink in the package.
 
- -- Lorenzo "Palinuro" Faletra <eclipse@parrotsec.org>  Wed, 01 Jun 2016 01:24:56 +0200
+ -- Raphaël Hertzog <hertzog@debian.org>  Wed, 08 Jun 2016 12:38:58 +0200
+
+live-config (5.20160607) unstable; urgency=medium
+
+  * Team upload.
+  * No longer manually start the getty@* services. There is systemd-logind
+    already taking care of this at runtime when the user switches to the
+    corresponding VT. Furthermore systemd-logind is smarter since it will
+    avoid running it on an already used VT (such as vt1 which is nowadays
+    used by gdm3). This also gets rid of the undesirable boot delay that
+    was likely introduced by one of the above conflicts.
+  * Make live-config-systemd the default backend.
+  * Properly handle hwclock set to local time. Closes: #824197
+    Thanks to Tom Jampen <tom@cryptography.ch> for the patch.
+  * Fix timezone configuration by dropping /etc/localtime so that
+    tzdata config script is forced to recreate it from /etc/timezone.
+    Closes: #816201 Thanks to Gregory DAVID <groolot@groolot.net> for
+    the analysis.
+  * Also look for live/config.conf in /lib/live/mount/persistence/*/
+    Closes: #817831 Thanks to Gregory DAVID <groolot@groolot.net>
+    for the patch.
+  * Automatically export variables set in live-config configuration
+    files so that components inherit from them. Closes: #799359
+    Thanks to Lukas Schwaighofer <lukas@schwaighofer.name> for the patch.
+  * Drop override and options for XZ compression, it has been the default for
+    a while.
+  * Bump Standards-Version to 3.9.8.
+
+ -- Raphaël Hertzog <hertzog@debian.org>  Tue, 07 Jun 2016 16:30:13 +0200
 
 live-config (5.20151121) unstable; urgency=medium
 

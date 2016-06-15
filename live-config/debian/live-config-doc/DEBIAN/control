@@ -1,0 +1,14 @@
+Package: live-config-doc
+Source: live-config
+Version: 5.20160608+0parrot0
+Architecture: all
+Maintainer: Live Systems Maintainers <debian-live@lists.debian.org>
+Installed-Size: 92
+Section: doc
+Priority: optional
+Homepage: https://debian-live.alioth.debian.org/live-config/
+Description: Live System Configuration Components (documentation)
+ live-config contains the components that configure a live system during the
+ boot process (late userspace).
+ .
+ This package contains the documentation.

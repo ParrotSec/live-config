@@ -1,0 +1,4 @@
+463d92b016daed906ca5f4b85d8a308f  lib/systemd/system-generators/live-config-getty-generator
+665103370631ec43f45cb715ab2c770c  lib/systemd/system/live-config.service
+01a4df467588a84aff7dc46da923a4a7  usr/share/doc/live-config-systemd/changelog.gz
+3d0fd70880de9f00bbb19097d2351278  usr/share/doc/live-config-systemd/copyright

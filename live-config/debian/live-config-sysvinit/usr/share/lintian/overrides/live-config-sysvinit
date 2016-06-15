@@ -1,0 +1,2 @@
+# This is expected, the package is dedicated to sysvinit
+systemd-no-service-for-init-rcS-script live-config

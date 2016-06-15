@@ -1,0 +1,22 @@
+Package: live-config-systemd
+Source: live-config
+Version: 5.20160608+0parrot0
+Architecture: all
+Maintainer: Live Systems Maintainers <debian-live@lists.debian.org>
+Installed-Size: 36
+Depends: systemd, init-system-helpers (>= 1.18~)
+Recommends: dbus
+Conflicts: live-config-backend
+Replaces: live-config-backend
+Provides: live-config-backend
+Section: misc
+Priority: optional
+Homepage: https://debian-live.alioth.debian.org/live-config/
+Description: Live System Configuration Components (systemd backend)
+ The Live Systems project maintains the components to build Debian based Live
+ systems and the official Debian Live images themselves.
+ .
+ live-config contains the components to configure a live system during the boot
+ process (late userspace).
+ .
+ This package contains the systemd backend.

@@ -1,0 +1,20 @@
+Package: live-config
+Version: 5.20160608+0parrot0
+Architecture: all
+Maintainer: Live Systems Maintainers <debian-live@lists.debian.org>
+Installed-Size: 126
+Depends: live-config-systemd | live-config-backend
+Recommends: iproute2 | iproute, keyboard-configuration, live-config-doc, live-tools, locales | locales-all, sudo, user-setup
+Suggests: pciutils, wget
+Section: misc
+Priority: optional
+Homepage: https://debian-live.alioth.debian.org/live-config/
+Description: Live System Configuration Components
+ The Live Systems project maintains the components to build Debian based Live
+ systems and the official Debian Live images themselves.
+ .
+ live-config contains the components to configure a live system during the boot
+ process (late userspace).
+ .
+ In addition to live-config, a backend for an init system is required, such as
+ live-config-systemd.

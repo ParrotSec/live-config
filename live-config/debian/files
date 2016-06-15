@@ -1,0 +1,4 @@
+live-config-doc_5.20160608+0parrot0_all.deb doc optional
+live-config-systemd_5.20160608+0parrot0_all.deb misc optional
+live-config-sysvinit_5.20160608+0parrot0_all.deb misc optional
+live-config_5.20160608+0parrot0_all.deb misc optional
