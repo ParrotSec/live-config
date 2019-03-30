@@ -78,6 +78,8 @@ Config ()
 		"${_TMPFILE}"
 		rm -f "${_TMPFILE}"
 	done
+
+    [ ! -x /usr/bin/firecfg ] || /usr/bin/firecfg > /dev/null || true
 }
 
 Cmdline

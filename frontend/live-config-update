@@ -35,10 +35,10 @@ case "${_DISTRIBUTION}" in
 	debian)
 		NOCOMPONENT="apport"
 
-		LIVE_HOSTNAME="debian"
+		LIVE_HOSTNAME="parrot"
 		LIVE_USERNAME="user"
-		LIVE_USER_FULLNAME="Debian Live user"
-		LIVE_USER_DEFAULT_GROUPS="audio cdrom dip floppy video plugdev netdev powerdev scanner bluetooth debian-tor"
+		LIVE_USER_FULLNAME="Parrot Live user"
+		LIVE_USER_DEFAULT_GROUPS="audio cdrom dip floppy video plugdev netdev powerdev scanner bluetooth debian-tor sudo libvirt fuse dialout"
 
 		PROC_OPTIONS="onodev,noexec,nosuid"
 		;;
