@@ -1,10 +1,10 @@
 #!/bin/sh
 
 # Defaults
-LIVE_HOSTNAME="debian"
+LIVE_HOSTNAME="parrot"
 LIVE_USERNAME="user"
-LIVE_USER_FULLNAME="Debian Live user"
-LIVE_USER_DEFAULT_GROUPS="audio cdrom dip floppy video plugdev netdev powerdev scanner bluetooth debian-tor"
+LIVE_USER_FULLNAME="Parrot Live user"
+LIVE_USER_DEFAULT_GROUPS="audio cdrom dip floppy video plugdev netdev powerdev scanner bluetooth debian-tor sudo libvirt fuse dialout"
 export LIVE_HOSTNAME LIVE_USERNAME LIVE_USER_FULLNAME LIVE_USER_DEFAULT_GROUPS
 
 # Reading configuration files from filesystem and live-media
