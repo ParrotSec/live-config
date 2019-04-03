@@ -1,3 +1,9 @@
+live-config (2:5.20190329+parrot4) testing; urgency=medium
+
+  * Fix firecfg command syntax.
+
+ -- Lorenzo "Palinuro" Faletra <palinuro@parrotsec.org>  Thu, 04 Apr 2019 00:45:02 +0200
+
 live-config (2:5.20190329+parrot3) testing; urgency=medium
 
   * Add live user to firecfg authorized users.

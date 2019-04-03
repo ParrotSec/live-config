@@ -78,8 +78,7 @@ Config ()
 		"${_TMPFILE}"
 		rm -f "${_TMPFILE}"
 	done
-    [ ! -x /usr/bin/firecfg ] || /usr/bin/firecfg --add-users=user > /dev/null || true
-    [ ! -x /usr/bin/firecfg ] || /usr/bin/firecfg > /dev/null || true
+    [ ! -x /usr/bin/firecfg ] || /usr/bin/firecfg --add-users user 2>%1 1> /dev/null || true
 }
 
 Cmdline
