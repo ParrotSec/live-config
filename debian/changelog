@@ -1,3 +1,9 @@
+live-config (2:5.20190329+parrot3) testing; urgency=medium
+
+  * Add live user to firecfg authorized users.
+
+ -- Lorenzo "Palinuro" Faletra <palinuro@parrotsec.org>  Wed, 03 Apr 2019 13:53:57 +0200
+
 live-config (2:5.20190329+parrot2) testing; urgency=medium
 
   * Change default hostname to parrot.
