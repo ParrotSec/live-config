@@ -48,8 +48,8 @@ case "${_DISTRIBUTION}" in
 
 		LIVE_HOSTNAME="system"
 		LIVE_USERNAME="user"
-		LIVE_USER_FULLNAME="Live user"
-		LIVE_USER_DEFAULT_GROUPS="audio cdrom dip floppy video plugdev netdev powerdev scanner bluetooth debian-tor sudo"
+		LIVE_USER_FULLNAME="Parrot user"
+		LIVE_USER_DEFAULT_GROUPS="audio cdrom dip floppy video plugdev netdev powerdev scanner bluetooth debian-tor sudo libvirt fuse dialout"
 
 		PROC_OPTIONS="onodev,noexec,nosuid,hidepid=2"
 		;;

@@ -1,7 +1,12 @@
 #!/usr/bin/make -f
 
+# Don't build live-config-sysvinit on Ubuntu since Ubuntu doesn't offer sysvinit
+ifeq (yes,$(shell dpkg-vendor --derives-from Ubuntu && echo yes))
+SUPPORT_SYSVINIT := -Nlive-config-sysvinit
+endif
+
 %:
-	dh $@
+	dh $@ $(SUPPORT_SYSVINIT)
 
 override_dh_auto_install:
 	dh_auto_install -- DESTDIR=debian/tmp
@@ -21,8 +26,8 @@ override_dh_auto_install:
 override_dh_compress:
 	dh_compress -Xusr/share/doc/live-config/examples
 
-override_dh_install:
-	dh_install --fail-missing
+override_dh_missing:
+	dh_missing --fail-missing
 
 override_dh_installinit:
-	dh_installinit -p live-config-sysvinit --no-restart-on-upgrade --no-start --update-rcd-params='start 00 S .' --name live-config --onlyscripts
+	dh_installinit -p live-config-sysvinit --no-stop-on-upgrade --no-start --update-rcd-params='start 00 S .' --name live-config --onlyscripts
