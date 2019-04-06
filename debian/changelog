@@ -1,3 +1,9 @@
+live-config (5.20190329+parrot6) testing; urgency=medium
+
+  * Remove firejail hooks.
+
+ -- Lorenzo "Palinuro" Faletra <palinuro@parrotsec.org>  Sat, 06 Apr 2019 11:23:26 +0200
+
 live-config (5.20190329+parrot5) testing; urgency=medium
 
   [Lorenzo "Palinuro" Faletra]
