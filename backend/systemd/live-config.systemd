@@ -19,6 +19,7 @@ ConditionKernelCommandLine=boot=live
 Type=oneshot
 RemainAfterExit=yes
 ExecStart=/bin/live-config
+TimeoutSec=40
 
 [Install]
 WantedBy=basic.target
