@@ -1,3 +1,10 @@
+live-config (2:5.20190329+parrot7) parrot; urgency=medium
+
+  * Minor service fixes.
+  * Set up a max timeout for the systemd unit.
+
+ -- Lorenzo "Palinuro" Faletra <palinuro@parrotsec.org>  Sun, 07 Apr 2019 01:55:59 +0200
+
 live-config (5.20190329+parrot6) testing; urgency=medium
 
   * Remove firejail hooks.

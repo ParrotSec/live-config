@@ -23,22 +23,35 @@ _RELEASE="${3:-$(lsb_release -cs | tr [A-Z] [a-z])}"
 
 if ( [ -z "${_DISTRIBUTION}" ] || [ -z "${_RELEASE}" ] ) && [ ! -x "$(which lsb_release 2>/dev/null)" ]
 then
-	echo "E: lsb_release: command not found."
+	echo "W: lsb_release: command not found."
 	echo "I: lsb_release can be obtained from:"
 	echo "I:   http://www.linux-foundation.org/en/LSB"
 	echo "I: On Debian based systems, lsb_release can be installed with:"
 	echo "I:   sudo apt-get install lsb-release"
-	exit 1
+	echo
+	echo "Obtaining distro info by manually reading /etc/lsb-release"
+	_DISTRIBUTION="${2:-$(cat /etc/lsb-release | grep DISTRIB_ID | sed -e "s/DISTRIB_ID=//" | tr [A-Z] [a-z] | sed -e 's| |-|g')}"
 fi
 
 case "${_DISTRIBUTION}" in
 	debian)
 		NOCOMPONENT="apport"
 
+		LIVE_HOSTNAME="debian"
+		LIVE_USERNAME="user"
+		LIVE_USER_FULLNAME="Debian Live user"
+		LIVE_USER_DEFAULT_GROUPS="audio cdrom dip floppy video plugdev netdev powerdev scanner bluetooth debian-tor"
+
+		PROC_OPTIONS="onodev,noexec,nosuid"
+		;;
+
+	parrot)
+		NOCOMPONENT="apport"
+
 		LIVE_HOSTNAME="parrot"
 		LIVE_USERNAME="user"
 		LIVE_USER_FULLNAME="Parrot Live user"
-		LIVE_USER_DEFAULT_GROUPS="audio cdrom dip floppy video plugdev netdev powerdev scanner bluetooth debian-tor sudo libvirt fuse dialout"
+		LIVE_USER_DEFAULT_GROUPS="audio cdrom dip floppy video plugdev netdev powerdev scanner bluetooth debian-tor"
 
 		PROC_OPTIONS="onodev,noexec,nosuid"
 		;;
@@ -49,7 +62,7 @@ case "${_DISTRIBUTION}" in
 		LIVE_HOSTNAME="system"
 		LIVE_USERNAME="user"
 		LIVE_USER_FULLNAME="Parrot user"
-		LIVE_USER_DEFAULT_GROUPS="audio cdrom dip floppy video plugdev netdev powerdev scanner bluetooth debian-tor sudo libvirt fuse dialout"
+		LIVE_USER_DEFAULT_GROUPS="audio cdrom dip floppy video plugdev netdev powerdev scanner bluetooth debian-tor"
 
 		PROC_OPTIONS="onodev,noexec,nosuid,hidepid=2"
 		;;
