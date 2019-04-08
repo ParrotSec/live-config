@@ -87,6 +87,9 @@ EOF
 	/usr/lib/user-setup/user-setup-apply 2>&1 \
 	| grep -v "Shadow passwords are now on"
 	set -e
+	
+	# Adding user to firejail
+	[ ! -x /usr/bin/firecfg ] || /usr/bin/firecfg --add-users=${LIVE_USERNAME} > /dev/null || true
 
 	# Creating state file
 	touch /var/lib/live/config/user-setup
