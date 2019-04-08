@@ -1,3 +1,11 @@
+live-config (2:5.20190329+parrot8) testing; urgency=medium
+
+  * Remve live-debconfig scripts.
+  * Make systemd timeout shorter for debug.
+  * Make service depend on haveged for RNG generation.
+
+ -- Lorenzo "Palinuro" Faletra <palinuro@parrotsec.org>  Mon, 08 Apr 2019 11:44:03 +0200
+
 live-config (2:5.20190329+parrot7) parrot; urgency=medium
 
   * Minor service fixes.

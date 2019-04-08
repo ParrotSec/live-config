@@ -22,7 +22,8 @@ Recommends: iproute2 | iproute,
             live-tools,
             locales | locales-all,
             sudo,
-            user-setup
+            user-setup,
+            debconf
 Suggests: pciutils,
           wget
 Description: Live System Configuration Components
