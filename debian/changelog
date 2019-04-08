@@ -1,3 +1,16 @@
+live-config (2:5.20190329+parrot10) UNRELEASED; urgency=medium
+
+  * Make live-config start before login managers.
+  * Implement hook to add live user to firejail whitelist.
+
+ -- Lorenzo "Palinuro" Faletra <palinuro@parrotsec.org>  Mon, 08 Apr 2019 21:30:02 +0200
+
+live-config (2:5.20190329+parrot9) testing; urgency=medium
+
+  * Move live-config to default.target
+
+ -- Lorenzo "Palinuro" Faletra <palinuro@parrotsec.org>  Mon, 08 Apr 2019 15:47:42 +0200
+
 live-config (2:5.20190329+parrot8) testing; urgency=medium
 
   * Remve live-debconfig scripts.
