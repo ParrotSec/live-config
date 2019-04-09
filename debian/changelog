@@ -1,4 +1,10 @@
-live-config (2:5.20190329+parrot10) UNRELEASED; urgency=medium
+live-config (2:5.20190329+parrot11) testing; urgency=medium
+
+  * Try to force firejail user authorization.
+
+ -- Lorenzo "Palinuro" Faletra <palinuro@parrotsec.org>  Tue, 09 Apr 2019 23:54:21 +0200
+
+live-config (2:5.20190329+parrot10) testing; urgency=medium
 
   * Make live-config start before login managers.
   * Implement hook to add live user to firejail whitelist.
