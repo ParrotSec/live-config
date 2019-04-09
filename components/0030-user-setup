@@ -88,8 +88,10 @@ EOF
 	| grep -v "Shadow passwords are now on"
 	set -e
 	
-	# Adding user to firejail
-	[ ! -x /usr/bin/firecfg ] || /usr/bin/firecfg --add-users=${LIVE_USERNAME} > /dev/null || true
+	# Remove live user if it was previously added
+    sed -i '/user/d' /etc/firejail/firejail.users || true
+    # Authorize new user
+    echo ${LIVE_USERNAME} >> /etc/firejail/firejail.users
 
 	# Creating state file
 	touch /var/lib/live/config/user-setup
