@@ -9,7 +9,7 @@
 [Unit]
 Description=live-config configures a live system during the boot process (late userspace).
 Documentation=man:live-config
-Before=live-tools.service systemd-user-sessions.service
+Before=live-tools.service systemd-user-sessions.service lightdm.service
 After=local-fs.target systemd-tmpfiles-setup.service haveged.service
 DefaultDependencies=no
 ConditionPathExists=/bin/live-config
@@ -19,7 +19,7 @@ ConditionKernelCommandLine=boot=live
 Type=oneshot
 RemainAfterExit=yes
 ExecStart=/bin/live-config
-TimeoutSec=20
+TimeoutSec=50
 
 [Install]
 WantedBy=default.target
