@@ -1,3 +1,9 @@
+live-config (2:5.20190329+parrot12.2) testing; urgency=medium
+
+  * Avoid bashisms.
+
+ -- Lorenzo "Palinuro" Faletra <palinuro@parrotsec.org>  Wed, 24 Apr 2019 03:02:55 +0200
+
 live-config (2:5.20190329+parrot12.1) testing; urgency=medium
 
   * Experimental workaround for missing autologin in Parrot KDE 4.6.
