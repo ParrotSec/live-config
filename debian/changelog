@@ -1,3 +1,10 @@
+live-config (2:5.20190329+parrot13) testing; urgency=medium
+
+  * Specify autologin session in lightdm.
+  * Drop previous lightdm autologin workarounds.
+
+ -- Lorenzo "Palinuro" Faletra <palinuro@parrotsec.org>  Thu, 25 Apr 2019 01:12:20 +0200
+
 live-config (2:5.20190329+parrot12.2) testing; urgency=medium
 
   * Avoid bashisms.
