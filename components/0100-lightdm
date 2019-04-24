@@ -71,6 +71,16 @@ Config ()
 
 	# Creating state file
 	touch /var/lib/live/config/lightdm
+	
+	# try to kill lightdm if it is running to make it restart with new settings,
+	# and sleep for some milliseconds to put a minimum distance between
+	# live-config and lghtdm
+	#
+	# this is a dirty workaround for Parrot KDE to fix autologin issues in live mode
+	# when lightdm starts before changes to its config file are applied.
+    killall lightdm || true
+    sleep 0.1
+
 }
 
 Cmdline
