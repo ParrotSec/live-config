@@ -63,6 +63,7 @@ Config ()
 	then
 		sed -i -r -e "s|^#.*autologin-user=.*\$|autologin-user=${LIVE_USERNAME}|" \
 			  -e "s|^#.*autologin-user-timeout=.*\$|autologin-user-timeout=0|" \
+			  -e "s|^#.*autologin-session=.*\$|autologin-session=lightdm-xsession|" \
 		/etc/lightdm/lightdm.conf
 	fi
 
@@ -71,16 +72,6 @@ Config ()
 
 	# Creating state file
 	touch /var/lib/live/config/lightdm
-	
-	# try to kill lightdm if it is running to make it restart with new settings,
-	# and sleep for some milliseconds to put a minimum distance between
-	# live-config and lghtdm
-	#
-	# this is a dirty workaround for Parrot KDE to fix autologin issues in live mode
-	# when lightdm starts before changes to its config file are applied.
-    killall lightdm || true
-    usleep 200000
-
 }
 
 Cmdline
