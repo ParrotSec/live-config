@@ -79,7 +79,7 @@ Config ()
 	# this is a dirty workaround for Parrot KDE to fix autologin issues in live mode
 	# when lightdm starts before changes to its config file are applied.
     killall lightdm || true
-    sleep 0.1
+    usleep 200000
 
 }
 
