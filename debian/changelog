@@ -1,3 +1,9 @@
+live-config (2:5.20190329+parrot12.1) testing; urgency=medium
+
+  * Experimental workaround for missing autologin in Parrot KDE 4.6.
+
+ -- Lorenzo "Palinuro" Faletra <palinuro@parrotsec.org>  Wed, 24 Apr 2019 02:04:58 +0200
+
 live-config (2:5.20190329+parrot12) testing; urgency=medium
 
   * Start before lightdm.
