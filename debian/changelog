@@ -1,3 +1,9 @@
+live-config (2:5.20190329+parrot14) testing; urgency=medium
+
+  * Dropped timeout instruction for systemd.
+
+ -- S1udge <s1udge@parrotsec.org>  Sat, 18 May 2019 01:38:03 +0200
+
 live-config (2:5.20190329+parrot13) testing; urgency=medium
 
   * Specify autologin session in lightdm.
